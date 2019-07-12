@@ -7,44 +7,27 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Movie implements BeanFactoryAware, BeanNameAware, ApplicationContextAware
+public class Movie
 {
-    private Actor actor;
 
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException
-    {
-        System.out.println("Implementing BeanFactoryAware");
-    }
+private Actor actor;
 
-    @Override
-    public void setBeanName(String s)
-    {
-        System.out.println("Implementing BeanNameAware");
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException
-    {
-        System.out.println("Implementing ApplicationContext");
-    }
-
-    public Movie(Actor actor)
-    {
+public Movie(Actor actor)
+        {
         this.actor = actor;
-    }
-    public Movie()
-    {
+        }
+public Movie()
+        {
 
-    }
-    public void setActor(Actor actor)
-    {
+        }
+public void setActor(Actor actor)
+        {
         this.actor = actor;
 
-    }
+        }
 
-    public void display()
-    {
+public void display()
+        {
         System.out.println("The actor information : " +actor.getName()+"  "+actor.getGender() +"   "+actor.getAge());
-    }
-}
+        }
+        }
