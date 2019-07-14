@@ -1,24 +1,30 @@
 package com.stackroute;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.support.BeanDefinitionReader;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
+import com.stackroute.config.AppConfig;
+import com.stackroute.Movie;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class Main {
     public static void main(String[] args) {
-        // ApplicationContext.............
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.register(AppConfig.class);
+        ctx.refresh();
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movieobj1 = context.getBean("movie", Movie.class);
-        movieobj1.display();
-        Movie movieobj2 = context.getBean("movie1", Movie.class);
-        movieobj2.display();
+        Movie movie = (Movie) ctx.getBean("movie");
+        System.out.println(movie);
+
+
+        Movie movie1 = (Movie) ctx.getBean("movie1");
+        System.out.println(movie1);
+
+        Movie movie2 = (Movie) ctx.getBean("movie2");
+        System.out.println(movie2);
+
+
+        //Checking scope
+        System.out.println(movie==movie1);
+
     }
+
 }

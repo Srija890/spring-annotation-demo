@@ -1,46 +1,54 @@
 package com.stackroute;
 
+
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Component
 public class Actor {
 
-    // Declaration
-    private String name,gender;
-    private int age;
+    private String aname;
+    private String agender;
+    private int aage;
 
-    public Actor(String name, String gender, int age)
-    {
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
+    public Actor() {
     }
-    public Actor()
-    {
-
+    public Actor(String aname, String agender, int aage) {
+        this.aname = aname;
+        this.agender = agender;
+        this.aage = aage;
     }
 
-    public String getName()
-    {
-        return name;
+    public String getAname() {
+        return aname;
     }
 
-    public String getGender()
-    {
-        return gender;
+    public void setAname(String aname) {
+        this.aname = aname;
     }
 
-    public int getAge()
-    {
-        return age;
+    public String getAgender() {
+        return agender;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAgender(String agender) {
+        this.agender = agender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public int getAage() {
+        return aage;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAage(int aage) {
+        this.aage = aage;
+    }
+
+    @Override
+    public String toString() {
+        return "Actor{" +
+                "aname='" + aname + '\'' +
+                ", agender='" + agender + '\'' +
+                ", aage=" + aage +
+                '}';
     }
 }
