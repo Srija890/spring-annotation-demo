@@ -11,20 +11,15 @@ public class SpringBeanConfiguration
 {
     @Bean(name = "movie")
     public Movie getMovie(){
-        Movie movie=new Movie();
-        movie.setM_name("Maharshi");
+        Movie movie=new Movie("Maharshi");
         return movie;
     }
-    @Bean(name = "movie1")
-    public Movie getMovie1(){
-        Actor actor1=new Actor("Prabhas","Male",40);
-        Movie movie1=new Movie("Bahubali",actor1);
-        return movie1;
+    @Bean(name = "actor")
+    public Actor getActor() {
+        Actor actor = new Actor("Mahesh", "Male", 40);
+        return actor;
     }
-    @Bean(name = "movie2")
-    public Movie getMovie2(){
-        Actor actor1=new Actor("Anushka","Female",40);
-        Movie movie1=new Movie("Arundathi",actor1);
-        return movie1;
-    }
+
 }
+
+

@@ -14,17 +14,5 @@ public class Main {
         Movie movie = (Movie) ctx.getBean("movie");
         System.out.println(movie);
 
-
-        Movie movie1 = (Movie) ctx.getBean("movie1");
-        System.out.println(movie1);
-
-        Movie movie2 = (Movie) ctx.getBean("movie2");
-        System.out.println(movie2);
-
-
-        //Checking scope
-        System.out.println(movie==movie1);
-
     }
-
 }

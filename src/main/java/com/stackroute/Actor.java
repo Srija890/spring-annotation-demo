@@ -7,48 +7,48 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Component
 public class Actor {
 
-    private String aname;
-    private String agender;
-    private int aage;
+    private String name;
+    private String gender;
+    private int age;
 
     public Actor() {
     }
-    public Actor(String aname, String agender, int aage) {
-        this.aname = aname;
-        this.agender = agender;
-        this.aage = aage;
+    public Actor(String name, String gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
     }
 
-    public String getAname() {
-        return aname;
+    public String getname() {
+        return name;
     }
 
-    public void setAname(String aname) {
-        this.aname = aname;
+    public void setname(String name) {
+        this.name = name;
     }
 
-    public String getAgender() {
-        return agender;
+    public String getgender() {
+        return gender;
     }
 
-    public void setAgender(String agender) {
-        this.agender = agender;
+    public void setgender(String gender) {
+        this.gender = gender;
     }
 
-    public int getAage() {
-        return aage;
+    public int getage() {
+        return age;
     }
 
-    public void setAage(int aage) {
-        this.aage = aage;
+    public void setage(int age) {
+        this.age = age;
     }
 
     @Override
     public String toString() {
         return "Actor{" +
-                "aname='" + aname + '\'' +
-                ", agender='" + agender + '\'' +
-                ", aage=" + aage +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
                 '}';
     }
 }
