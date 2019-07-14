@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
-public class Movie
+
+public class Movie implements ApplicationContextAware,BeanFactoryAware,BeanNameAware
 {
         private String m_name;
         @Autowired
@@ -47,6 +47,22 @@ public class Movie
                         "m_name='" + m_name + '\'' +
                         ", actor=" + actor +
                         '}';
+        }
+
+        @Override
+        public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+                System.out.println(beanFactory.getBean("movie"));
+        }
+
+        @Override
+        public void setBeanName(String s) {
+                System.out.println(s);
+
+        }
+
+        @Override
+        public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+                System.out.println(applicationContext.getBean("movie"));
         }
 }
 
