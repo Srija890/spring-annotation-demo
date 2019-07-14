@@ -20,6 +20,17 @@ public class SpringBeanConfiguration
         return actor;
     }
 
+    @Bean(name="beanlifecycle")
+    public BeanLifecycleDemoBean getBeanLifeCycle()
+    {
+        BeanLifecycleDemoBean beanLifecycleDemoBean=new BeanLifecycleDemoBean();
+        return beanLifecycleDemoBean;
+    }
+
+
 }
+
+
+
 
 
